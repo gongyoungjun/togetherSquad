@@ -18,9 +18,7 @@ $(function(){
 	$("button#submitPost").click(function(){
 		$("form").submit();
 	});
-});
-	
-});
+});	
 </script>
 <title>Start Simple Web</title>
 
@@ -55,18 +53,15 @@ $(function(){
 p {
 	margin: 10px;
 }
-
 .pagination {
 	display: block;
 	text-align: center;
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-
 .pagination>li>a {
 	color: #404040;
 	float: none;
 }
-
 .pagination>.active>a, .pagination>.active>a:hover, .pagination>.active>a:focus
 	{
 	z-index: 3;
@@ -75,7 +70,6 @@ p {
 	background-color: #404040;
 	border-color: #404040;
 }
-
 .pagination>li>a:hover, .pagination>li>a:focus {
 	z-index: 3;
 	color: black;
@@ -83,22 +77,18 @@ p {
 	background-color: white;
 	border-color: #404040;
 }
-
 .glyphicon {
 	margin-left: 10px
 }
-
 .board-category {
 	font-size: 12px;
 	color: #404040;
 	margin: 5px;
 	margin-left: 20px
 }
-
 .board-field {
 	margin-bottom: 30px
 }
-
 .btn {
 	display: inline-block;
 	padding: 6px 12px;
@@ -120,26 +110,22 @@ p {
 	border: 1px solid transparent;
 	border-radius: 4px;
 }
-
 .btn-primary {
 	background-color: #3b3b3b;
 	border-color: #282828;
 	background-color: #3b3b3b;
 }
-
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active,
 	.btn-primary.active, .open .dropdown-toggle.btn-primary {
 	background-color: #282828;
 	border-color: #080808;
 }
-
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active,
 	.btn-primary.active, .open>.dropdown-toggle.btn-primary {
 	color: #fff;
 	background-color: gray;
 	border-color: gray;
 }
-
 .btn-sm, .btn-group-sm>.btn {
 	text-align: center;
 	padding: 13px 13px;
@@ -149,22 +135,18 @@ p {
 	border-top: 35px;
 	padding: 13px 13px;
 }
-
 #write-field {
 	padding: 0 0 30px 0;
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-
 #write-field table {
 	width: 100%;
 	border: 0;
 	border-spacing: 0;
 }
-
 #write-field td {
 	padding: 8px 0 8px 0;
 }
-
 #write-field .td1 {
 	width: 70px;
 	min-height: 30px;
@@ -172,12 +154,10 @@ p {
 	color: #666;
 	vertical-align: middle;
 }
-
 #write-field .td1.vtop {
 	vertical-align: top;
 	padding-top: 10px
 }
-
 #write-field .td2 input[type="text"], input[type="password"] {
 	height: 28px;
 	padding: 3px;
@@ -186,7 +166,6 @@ p {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
-
 #write-field .input-title {
 	float: left;
 	color: #666;
@@ -196,24 +175,19 @@ p {
 	width: 70px;
 	margin: 4px 0 4px 0;
 }
-
 #write-field .input-forms {
 	margin: 4px 0 4px 0;
 	overflow: hidden;
 }
-
 #write-field .input-name {
 	height: 28px;
 }
-
 #write-field .input-pwd {
 	height: 28px;
 }
-
 #write-field .td2 .more {
 	width: 85%;
 }
-
 #write-field .td2 select {
 	min-width: 155px;
 	max-width: 250px;
@@ -221,38 +195,31 @@ p {
 	padding: 2px;
 	margin: 0;
 }
-
 #write-field .td2 .guide {
 	font-size: 90%;
 	font-family: dotum;
 	color: #999;
 	padding: 3px 0 10px 0;
 }
-
 #write-field .td2 .guide img {
 	position: relative;
 	top: -1px;
 }
-
 #write-field .td2 .check-label {
 	color: #666;
 }
-
 #write-field .td2 .after {
 	padding: 10px 0 0 0;
 	color: #999;
 	font-family: dotum;
 }
-
 #write-field .td2 .after input {
 	position: relative;
 	top: 1px;
 }
-
 #write-field .editbox {
 	padding: 15px 0 15px 0;
 }
-
 #write-field .iconbox {
 	border-left: #e0e0e0 solid 1px;
 	border-top: #e0e0e0 solid 1px;
@@ -260,41 +227,34 @@ p {
 	background: #f9f9f9;
 	padding: 6px 0 8px 7px;
 }
-
 #write-field .iconbox a {
 	padding: 0 3px 0 3px;
 	font-family: dotum;
 	color: #333;
 }
-
 #write-field .iconbox a:hover {
 	color: #7899C7;
 }
-
 #write-field .iconbox a img {
 	position: relative;
 	top: -1px;
 	margin-right: 3px;
 }
-
 #write-field .iconbox .split {
 	padding: 0 2px 0 2px;
 	margin-bottom: -1px;
 }
-
 #write-field .bottombox {
 	text-align: center;
 	padding: 20px 0 20px 0;
 	margin: 15px 0 0 0;
 	border-top: #efefef solid 1px;
 }
-
 #write-field .bottombox .btngray {
 	font-weight: bold;
 	width: 60px;
 	height: 25px;
 }
-
 #write-field .bottombox .btnblue {
 	font-weight: bold;
 	width: 80px;
@@ -331,23 +291,12 @@ p {
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<input type="hidden" id="writer_id" name="writer_id"
-					value="${param.user_id}" />
+					value="${param.writer_id}" />
 				<table>
-					<!--<tr>
-					<td class="td1">카테고리</td>
-					<td class="td2"><select name="category" id="category" class="form-control"
-						style="display: inline-block; background-color:#141414">
-							<option value="">&nbsp;+ </option>
-							<option value="">----------------------</option>
-							<option value="">공지사항</option>
-							
-					</select></td>
-				</tr>-->
-
 					<tr>
 						<td class="td1">제목</td>
 						<td class="td2" valign="middle"><input type="text"
-							name="title" id="title" value=""
+							name="title" id="title"
 							class="form-control input-sm bskr-font subject"
 							style="background-color: #141414" /></td>
 					</tr>
@@ -369,50 +318,13 @@ p {
 					<input type="button" value="취소" class="btn btn-default btn-sm"
 						onclick="history.back();"
 						style="background-color: #B40404; color: white;" />&nbsp;
-					<button id="submitPost" type="button"
-						class="btn btn-primary btn-sm">
-						<i class="glyphicon glyphicon-ok">확인</i>
+					<button id="submitPost" type="button" 
+						class="btn btn-primary btn-sm" style="background: #035AA6; background-color:blue;">확인
 					</button>
 				</div>
 			</div>
 		</div>
 	</form>
-	<!-- Footer -->
-	<!-- <footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<ul class="list-inline text-center">
-						<li><a href="#"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-						<li><a href="#"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-home fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-						<li><a href="#"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-github fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-					</ul>
-					<p class="copyright text-muted">Copyright &copy;2016 SIST. All
-						rights reserved | code by milib</p>
-				</div>
-			</div>
-		</div>
-	</footer>-->
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-
-	<!-- Custom Theme JavaScript -->
-	<script src="js/clean-blog.min.js"></script>
 
 </body>
 

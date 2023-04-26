@@ -1,5 +1,6 @@
 package com.bit.web.play.controller;
 
+
 import com.bit.web.play.email.MailUtil;
 import com.bit.web.play.service.PlayService;
 import com.bit.web.play.vo.GamegenreBean;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -235,5 +237,12 @@ public class ApiController {
         }
     }
 
+	@RequestMapping(value="recommendationSelect", method = RequestMethod.GET)
+	@ResponseBody
+	public List<SquadBoardBean> recommendationSelect(@RequestParam(value = "userId", required=false)String userId){
+		String[] recIdArr = playService.selectCm_id(userId).split(",");
+		List<String> recIdList = Arrays.asList(recIdArr);
+		return playService.recSquadSelect(recIdList);
+	}
 
 }

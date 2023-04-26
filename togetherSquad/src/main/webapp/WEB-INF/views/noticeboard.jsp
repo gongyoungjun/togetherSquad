@@ -1,28 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>    
-<!DOCTYPE html PUBLIC >
-<html>
-
+   pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<!DOCTYPE html>
+<html lang="kr">
 <head>
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>Start Simple Web</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+   content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>TogetherSquad - 공지사항</title>
 <link rel="stylesheet"
-	href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+   href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 <link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-	integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-	crossorigin="anonymous" referrerpolicy="no-referrer" />
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+   integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/play/index.css">
+   href="${pageContext.request.contextPath}/resources/css/play/index.css">
 
 
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   
 </head>
 <body>
 
@@ -36,8 +42,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<div class="site-heading" align="center"
-						style="margin-top: 100px; padding-top: 35px; padding-bottom: 35px">
+					<div class="site-heading"
+						style="margin-top: 10px; padding-top: 35px; padding-bottom: 35px">
 						<h2>공지사항 게시판</h2>
 						<span class="subheading"></span>
 					</div>
@@ -51,23 +57,21 @@
 		<c:choose>
 		<c:when test="${userAuthority == 'Admin_Permissions'}"> <%-- 권한이 있는 경우 --%>
 			<div class="board-toolbar" 	style="text-align: right; margin-bottom: 0px">
-				<a href="/web/play/noticeboardwrite.jsp?job=new&writer_id=${param.writer_id}"  class="btn btn-primary btn-sm"
-				style="margin-right: 400px; font-size:20px;">
-				<i class="glyphicon glyphicon-pencil" ></i>
-				공지사항 글쓰기
-				</a>
+				<!--<a href="/web/play/noticeboardwrite.jsp?writer_id=${param.writer_id}" class="btn btn-primary btn-sm">-->
+				<a href="/web/play/noticeboardwrite.jsp" class="btn btn-primary btn-sm">
+				<i class="glyphicon glyphicon-pencil" style="margin-right: 15px;" ></i>쓰기</a>
 			</div>
 		</c:when>
 		</c:choose> 
 
 
-			<div class="list-group" style="margin-left: 100px; margin-top: 100px">
+			<div class="list-group">
 				
 				<c:forEach items="${notice}" var="i" varStatus="cnt">	
 			
 				<div class="title">
 						<a href="/web/selectNoticeBoard?no=${i.noticeboard_no}" style="color:white;">
-							${i.title}<span class="badge">New</span>
+							${i.title}<span class="badge"></span>
 						</a>
 					</div>
 					
@@ -81,18 +85,19 @@
 				
 				
 			</div>
-
+			<div class="col-md-2"></div>
+			<div class="col-md-8" style="margin-top:500px">
+				<ul class="pagination">
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">6</a></li>
+				</ul>
+			</div>			
+		</div>
 	</div>
-
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-
-	<!-- Custom Theme JavaScript -->
-	<script src="js/clean-blog.min.js"></script>
-
 </body>
 
 </html>

@@ -244,15 +244,24 @@ public interface PlayService {
 	 */	
 	int getUserNo(String writerId);
 	
-	//int follow(String host_id);
 	int followTableSequence();
 	List<Map<String, Object>> followCheck(String my_id);
 	void followTableInsert(HashMap<String, Object>map);
 	void followCntDown(String host_id);
 	void followDelete(HashMap<String, Object>map);
 	void followCntUpdate(String host_id);
-	
+
 	int selectFollowCnt(String id);
+	String selectCm_id(String members_id);
+
+	List<SquadBoardBean> recSquadSelect(List<String> recIdList);
+	void membersTableFollowCntSync(String members_id);
+	
+	/**
+	 * 호스트 평점 업데이트
+	 */
+	void hostGradeUpdate(String hostId);
+	void hostReviewCntUpdate(String hostId);
 	
 
 }

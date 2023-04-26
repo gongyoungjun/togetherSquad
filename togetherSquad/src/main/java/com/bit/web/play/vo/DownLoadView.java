@@ -17,12 +17,11 @@ public class DownLoadView extends AbstractView {
 	public DownLoadView() {
 		this.setContentType("application/downlaod;utf-8");
 	}
-
 	@Override
 	protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
-		response.setContentType(this.getContentType());//ÆäÀÌÁö ÀÌµ¿¾øÀÌ blank´Ù¿î 
+		response.setContentType(this.getContentType());//Ã†Ã¤Ã€ÃŒÃÃ¶ Ã€ÃŒÂµÂ¿Â¾Ã¸Ã€ÃŒ blankÂ´Ã™Â¿Ã® 
 		File file=(File)model.get("downloadFile");
 		response.setContentLength((int)file.length());
 		String userAgent=request.getHeader("User-Agent");
@@ -41,11 +40,6 @@ public class DownLoadView extends AbstractView {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		out.flush();
-		
-		
+		out.flush();	
 	}
-	
-	
-
 }

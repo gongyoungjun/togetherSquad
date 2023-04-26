@@ -725,5 +725,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectFollowCnt" parameterType="java.lang.String" resultType="java.lang.Integer">
 		select follow_cnt from members where members_id = #{host_id}
 	</select>
+	<select id="selectCm_id" resultType="java.lang.String"
+		parameterType="java.lang.String">
+		SELECT CM_ID FROM RECOMMENDATIONS WHERE MEMBERS_ID = #{value}
+	</select>
+	<select id="recSquadSelect"
+		resultType="squadboard" parameterType="list">
+		SELECT SB.SQUADBOARD_NO, SB.MEMBERS_ID, SB.HOSTNAME, SB.TITLE,
+		SB.USER_ACCEPTCNT, SB.USER_MAXCNT, SB.PLAYTIME, SB.REGDATE,
+		SB.RESERVEDATE, SB.PRICE, SB.FILENAME,
+		GG.NAME AS GAMEGENRE_NAME,
+		GG.GAME_IMG AS GAMEGENRE_GAME_IMG, SS.STATENAME AS
+		SQUADSTATE_STATENAME, MB.PROFILE_IMG AS MEMBERS_PROFILE_IMG
+		FROM
+		SQUADBOARD SB, GAMEGENRE GG, SQUADSTATE SS, MEMBERS MB
+		WHERE
+		SB.MEMBERS_ID IN
+		<foreach item="item" collection="list" open="(" separator=","
+			close=")">
+			#{item}
+		</foreach>
+		AND SB.GAMEGENRE_NO = GG.GAMEGENRE_NO AND SS.SQUADSTATE_NO =
+		SB.SQUADSTATE AND SS.SQUADSTATE_NO = 0 AND MB.MEMBERS_ID =
+		SB.MEMBERS_ID
+		ORDER BY SB.SQUADBOARD_NO DESC
+	</select>
+	<update id="membersTableFollowCntSync" parameterType="java.lang.String">
+		UPDATE MEMBERS SET FOLLOW_CNT  = (SELECT COUNT(*) FROM FOLLOWERMEMBERS WHERE FOLLOWINGMEMBERS_ID = #{value})
+		WHERE MEMBERS_ID = #{value}
+	</update>
 	
 </mapper>

@@ -457,6 +457,29 @@ public class PlayServiceImpl implements PlayService {
 	public int selectFollowCnt(String id) {
 		return dao.selectFollowCnt(id);
 	}
+	@Override
+	public   String selectCm_id(String members_id) {
+		return dao.selectCm_id(members_id);
+	}
+	@Override
+	public List<SquadBoardBean> recSquadSelect(List<String> recIdList){
+		return dao.recSquadSelect(recIdList);
+	}
+	@Override
+	public void membersTableFollowCntSync(String members_id) {
+		dao.membersTableFollowCntSync(members_id);
+	}
+	/**
+	 * 호스트 평점 업데이트
+	 */
+	@Override
+	public void hostGradeUpdate(String hostId){
+		dao.hostGradeUpdate(hostId);
+	}
+	@Override
+	public void hostReviewCntUpdate(String hostId) {
+		dao.hostReviewCntUpdate(hostId);
+	}
 	
 
 
